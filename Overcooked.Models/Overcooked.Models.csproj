@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200423140252_step.cs" />
+    <Compile Remove="Migrations\20200423140252_step.Designer.cs" />
+    <Compile Remove="Migrations\20200423141147_step.cs" />
+    <Compile Remove="Migrations\20200423141147_step.Designer.cs" />
+    <Compile Remove="Migrations\20200423143212_step.cs" />
+    <Compile Remove="Migrations\20200423143212_step.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>
