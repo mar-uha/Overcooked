@@ -6,13 +6,39 @@ export class Recipe extends Component {
     constructor(props) {
         super(props);
         this.state = { recipes: [], loading: true };
+
+        // This binding is necessary to make "this" work in the callback  
+        this.handleDelete = this.handleDelete.bind(this);
+        this.handleEdit = this.handleEdit.bind(this);
     }
 
     componentDidMount() {
         this.populateRecipesData();
     }
 
-    static renderRecipesTable(recipes) {
+    // Handle Delete request for a recipe
+    handleDelete = (id) => {
+        if (!window.confirm(`Do you want to delete recipe with Id: ${id}`))
+            return;
+        else {
+            fetch(`api/v1/recipe/${id}`, {
+                method: 'delete'
+            }).then(data => {
+                this.setState(
+                    {
+                        recipes: this.state.recipes.filter((rec) => {
+                            return (rec.id !== id);
+                        })
+                    });
+            });
+        }
+    }
+
+    handleEdit = (id) => {
+        this.props.history.push(`/recipe/edit/${id}`);
+    }  
+
+    renderRecipesTable(recipes) {
         return (
             <table className='table table-striped' aria-labelledby="tabelLabel">
                 <thead>
@@ -25,6 +51,7 @@ export class Recipe extends Component {
                         <th>Cooking time</th>
                         <th>Dish type</th>
                         <th>Difficulty</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,6 +65,10 @@ export class Recipe extends Component {
                             <td>{recipe.cookingTime}</td>
                             <td>{recipe.dishType}</td>
                             <td>{recipe.difficulty}</td>
+                            <td>
+                                <button onClick={(id) => this.handleEdit(recipe.id)}>Edit</button>
+                                <button onClick={(id) => this.handleDelete(recipe.id)}>Delete</button>
+                            </td>  
                         </tr>
                     )}
                 </tbody>
@@ -48,19 +79,19 @@ export class Recipe extends Component {
     render() {
         let contents = this.state.loading
             ? <p><em>Loading...</em></p>
-            : Recipe.renderRecipesTable(this.state.recipes);
+            : this.renderRecipesTable(this.state.recipes);
 
         return (
             <div>
                 <h1 id="tabelLabel">Recipes</h1>
-                <Link to="/addrecipe">Create a new excellent recipe</Link>  
+                <Link to="/recipe/add">Add a new excellent recipe</Link>  
                 {contents}
             </div>
         );
     }
 
     async populateRecipesData() {
-        const response = await fetch('api/v1/Recipe');
+        const response = await fetch('api/v1/recipe');
         const data = await response.json();
         this.setState({ recipes: data, loading: false });
     }

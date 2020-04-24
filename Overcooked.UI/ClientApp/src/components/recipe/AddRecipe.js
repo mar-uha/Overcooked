@@ -4,20 +4,39 @@ export class AddRecipe extends Component {
 
     constructor(props) {
         super(props);
+
         this.state = {
-            title: "Create",
-            loading: false,
-            recipe: {
-                title: '',
-                note: null,
-                price: null,
-                numberOfPeople: 1,
-                preparationTime: null,
-                cookingTime: null,
-                DishType: 0,
-                difficulty: null
-            }
+            title: "",
+            loading: true,
+            recipe: null
         };
+
+        const recipeId = this.props.match.params["id"];
+        // This will set state for Edit recipe  
+        if (recipeId > 0) {
+            fetch(`api/v1/recipe/${recipeId}`)
+                .then(response => response.json())
+                .then(data => {
+                    this.setState({ title: "Edit", loading: false, recipe: data });
+                });
+        }
+        // This will set state for Add recipe  
+        else {
+            this.state = {
+                title: "Create",
+                loading: false,
+                recipe: {
+                    title: '',
+                    note: null,
+                    price: null,
+                    numberOfPeople: 1,
+                    preparationTime: null,
+                    cookingTime: null,
+                    DishType: 0,
+                    difficulty: null
+                }
+            };
+        }
 
         // This binding is necessary to make "this" work in the callback  
         this.handleSave = this.handleSave.bind(this);
@@ -28,14 +47,26 @@ export class AddRecipe extends Component {
     handleSave = (event) => {
         event.preventDefault();
         const data = new FormData(event.target);
-        // POST request for Add a recipe.  
-        fetch('api/v1/recipe', {
-            method: 'POST',
-            body: data,
-        }).then((response) => response.json())
-            .then((responseJson) => {
-                this.props.history.push("/recipe");
-            })
+        // PUT request for Edit recipe.  
+        if (this.state.recipe.id) {
+            fetch('api/v1/recipe', {
+                method: 'PUT',
+                body: data
+            }).then((response) => response.json())
+              .then((responseJson) => {
+                  this.props.history.push("/recipe");
+              })
+        }
+        // POST request for Add a recipe.
+        else {
+            fetch('api/v1/recipe', {
+                method: 'POST',
+                body: data
+            }).then((response) => response.json())
+              .then((responseJson) => {
+                  this.props.history.push("/recipe");
+              })
+        }
     }
 
     // This will handle Cancel button click event.
@@ -45,10 +76,26 @@ export class AddRecipe extends Component {
     }
 
     render() {
+        let contents = this.state.loading
+            ? <p><em>Loading...</em></p>
+            : this.renderCreateForm();
+
+        return (
+            <div>
+                <h1>{this.state.title}</h1>
+                <h3>Recipe</h3>
+                <hr />
+                {contents}
+            </div>
+        );
+    }
+
+    // Returns the HTML Form to the render() method.
+    renderCreateForm() {
         return (
             <form onSubmit={this.handleSave}>
                 <div className="form-group row">
-                    <input type="hidden" name="recipeId" value={this.state.recipe.id} />
+                    <input type="hidden" name="id" value={this.state.recipe.id} />
                 </div>
                 {/* Title */}
                 <div className="form-group row">
