@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Overcooked.API", "Overcooked\Overcooked.API.csproj", "{7A901389-7392-4701-9C11-3E2861D551AB}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Overcooked.Models", "Overcooked.Models\Overcooked.Models.csproj", "{D012262A-B7CE-4294-8BEC-601D29485459}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Overcooked.DAL", "Overcooked.DAL\Overcooked.DAL.csproj", "{29F553F1-17AA-40C7-92DE-C897D6EB65FE}"
@@ -13,7 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{33A1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{82B1E26E-2A7E-46A8-9189-54EF1D48E45B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Overcooked.UI", "Overcooked.UI\Overcooked.UI.csproj", "{286F3029-2A25-4423-8F8F-469A29FDD7A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Overcooked.UI", "Overcooked.UI\Overcooked.UI.csproj", "{286F3029-2A25-4423-8F8F-469A29FDD7A8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Overcooked.API", "Overcooked.API\Overcooked.API.csproj", "{B866F2DB-4458-477A-9762-09EABD4A5654}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7A901389-7392-4701-9C11-3E2861D551AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7A901389-7392-4701-9C11-3E2861D551AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7A901389-7392-4701-9C11-3E2861D551AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7A901389-7392-4701-9C11-3E2861D551AB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D012262A-B7CE-4294-8BEC-601D29485459}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D012262A-B7CE-4294-8BEC-601D29485459}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D012262A-B7CE-4294-8BEC-601D29485459}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -37,15 +33,19 @@ Global
 		{286F3029-2A25-4423-8F8F-469A29FDD7A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{286F3029-2A25-4423-8F8F-469A29FDD7A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{286F3029-2A25-4423-8F8F-469A29FDD7A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B866F2DB-4458-477A-9762-09EABD4A5654}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B866F2DB-4458-477A-9762-09EABD4A5654}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B866F2DB-4458-477A-9762-09EABD4A5654}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B866F2DB-4458-477A-9762-09EABD4A5654}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{7A901389-7392-4701-9C11-3E2861D551AB} = {33A12733-0515-44BF-B6FA-5ED30580394E}
 		{D012262A-B7CE-4294-8BEC-601D29485459} = {33A12733-0515-44BF-B6FA-5ED30580394E}
 		{29F553F1-17AA-40C7-92DE-C897D6EB65FE} = {33A12733-0515-44BF-B6FA-5ED30580394E}
 		{286F3029-2A25-4423-8F8F-469A29FDD7A8} = {82B1E26E-2A7E-46A8-9189-54EF1D48E45B}
+		{B866F2DB-4458-477A-9762-09EABD4A5654} = {33A12733-0515-44BF-B6FA-5ED30580394E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {573CDA03-BFB6-4710-852E-84148894BA45}
