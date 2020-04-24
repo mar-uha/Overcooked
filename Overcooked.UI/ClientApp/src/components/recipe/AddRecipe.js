@@ -1,9 +1,12 @@
 ﻿import React, { Component } from 'react';
+import StarRatingComponent from 'react-star-rating-component';
+
 
 export class AddRecipe extends Component {
 
     constructor(props) {
         super(props);
+        this.onStarClick = this.onStarClick.bind(this);
 
         this.state = {
             title: "",
@@ -90,6 +93,12 @@ export class AddRecipe extends Component {
         );
     }
 
+    onStarClick(nextValue, prevValue, name) {
+        let state = this.state;
+        state.recipe.rating = nextValue;
+        this.setState(state);
+    }
+
     // Returns the HTML Form to the render() method.
     renderCreateForm() {
         return (
@@ -109,7 +118,11 @@ export class AddRecipe extends Component {
                 <div className="form-group row">
                     <label className=" control-label col-md-12" htmlFor="Rating">Rating</label>
                     <div className="col-md-4">
-                        <input className="form-control" type="number" min="0" max="5" name="rating" defaultValue={this.state.recipe.rating} />
+                        <StarRatingComponent
+                            name="rating"
+                            starCount={5}
+                            value={this.state.recipe.rating}
+                            onStarClick={this.onStarClick} />
                     </div>
                 </div>
 

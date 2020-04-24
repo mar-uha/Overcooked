@@ -1,5 +1,6 @@
 ﻿import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import StarRatingComponent from 'react-star-rating-component';
 
 export class Recipe extends Component {
 
@@ -58,7 +59,13 @@ export class Recipe extends Component {
                     {recipes.map(recipe =>
                         <tr key={recipe.id}>
                             <td>{recipe.title}</td>
-                            <td>{recipe.rating}</td>
+                            <td>
+                                <StarRatingComponent
+                                    name="rating"
+                                    editing={false}
+                                    starCount={5}
+                                    value={recipe.rating} />
+                            </td>
                             <td>{recipe.price}</td>
                             <td>{recipe.numberOfPeople}</td>
                             <td>{recipe.preparationTime}</td>
