@@ -27,7 +27,7 @@ export class AddRecipe extends Component {
                 loading: false,
                 recipe: {
                     title: '',
-                    note: null,
+                    rating: null,
                     price: null,
                     numberOfPeople: 1,
                     preparationTime: null,
@@ -107,9 +107,9 @@ export class AddRecipe extends Component {
 
                 {/* Rating */}
                 <div className="form-group row">
-                    <label className=" control-label col-md-12" htmlFor="Note">Rating</label>
+                    <label className=" control-label col-md-12" htmlFor="Rating">Rating</label>
                     <div className="col-md-4">
-                        <input className="form-control" type="number" min="0" max="5" name="note" defaultValue={this.state.recipe.note} />
+                        <input className="form-control" type="number" min="0" max="5" name="rating" defaultValue={this.state.recipe.rating} />
                     </div>
                 </div>
 

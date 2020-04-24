@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Overcooked.Models;
 
 namespace Overcooked.Models.Migrations
 {
     [DbContext(typeof(OvercookedContext))]
-    partial class OvercookedContextModelSnapshot : ModelSnapshot
+    [Migration("20200424135640_NoteRenameToRating")]
+    partial class NoteRenameToRating
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

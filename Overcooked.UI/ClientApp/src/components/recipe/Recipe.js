@@ -58,7 +58,7 @@ export class Recipe extends Component {
                     {recipes.map(recipe =>
                         <tr key={recipe.id}>
                             <td>{recipe.title}</td>
-                            <td>{recipe.note}</td>
+                            <td>{recipe.rating}</td>
                             <td>{recipe.price}</td>
                             <td>{recipe.numberOfPeople}</td>
                             <td>{recipe.preparationTime}</td>
