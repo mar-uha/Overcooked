@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace Overcooked.angular.UI.Controllers
+namespace Overcooked.UI.Angular.Controllers
 {
     [ApiController]
     [Route("[controller]")]

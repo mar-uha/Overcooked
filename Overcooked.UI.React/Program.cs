@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Overcooked.UI
+namespace Overcooked.UI.React
 {
     public class Program
     {

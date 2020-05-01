@@ -1,6 +1,6 @@
 using System;
 
-namespace Overcooked.angular.UI
+namespace Overcooked.UI.Angular
 {
     public class WeatherForecast
     {
