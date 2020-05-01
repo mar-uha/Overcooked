@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Overcooked.UI", "Overcooked
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Overcooked.API", "Overcooked.API\Overcooked.API.csproj", "{B866F2DB-4458-477A-9762-09EABD4A5654}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Overcooked.angular.UI", "Overcooked.angular.UI\Overcooked.angular.UI.csproj", "{00542D43-9213-4003-B2A4-B9C5C4396E13}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{B866F2DB-4458-477A-9762-09EABD4A5654}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B866F2DB-4458-477A-9762-09EABD4A5654}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B866F2DB-4458-477A-9762-09EABD4A5654}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00542D43-9213-4003-B2A4-B9C5C4396E13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00542D43-9213-4003-B2A4-B9C5C4396E13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00542D43-9213-4003-B2A4-B9C5C4396E13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00542D43-9213-4003-B2A4-B9C5C4396E13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{29F553F1-17AA-40C7-92DE-C897D6EB65FE} = {33A12733-0515-44BF-B6FA-5ED30580394E}
 		{286F3029-2A25-4423-8F8F-469A29FDD7A8} = {82B1E26E-2A7E-46A8-9189-54EF1D48E45B}
 		{B866F2DB-4458-477A-9762-09EABD4A5654} = {33A12733-0515-44BF-B6FA-5ED30580394E}
+		{00542D43-9213-4003-B2A4-B9C5C4396E13} = {82B1E26E-2A7E-46A8-9189-54EF1D48E45B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {573CDA03-BFB6-4710-852E-84148894BA45}
