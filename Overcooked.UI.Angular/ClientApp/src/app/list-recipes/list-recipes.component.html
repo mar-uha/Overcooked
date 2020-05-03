@@ -1,0 +1,30 @@
+<h1>Recipes</h1>
+
+<p *ngIf="!recipes">Loading...</p>
+
+<table class='table table-striped' *ngIf="recipes">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Rating</th>
+      <th>Price</th>
+      <th>Number of people</th>
+      <th>Preparation time</th>
+      <th>Cooking time</th>
+      <th>Dish type</th>
+      <th>difficulty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let recipe of recipes">
+      <td>{{ recipe.title }}</td>
+      <td>{{ recipe.rating }}</td>
+      <td>{{ recipe.price }}</td>
+      <td>{{ recipe.numberOfPeople }}</td>
+      <td>{{ recipe.prepartionTime }}</td>
+      <td>{{ recipe.cookingTime }}</td>
+      <td>{{ recipe.dishType }}</td>
+      <td>{{ recipe.difficulty }}</td>
+    </tr>
+  </tbody>
+</table>
