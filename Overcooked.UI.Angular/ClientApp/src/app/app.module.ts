@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ListRecipesComponent } from './list-recipes/list-recipes.component';
+import { EditRecipeComponent } from './edit-recipe/edit-recipe.component';
 
 @NgModule({
   declarations: [
@@ -18,17 +19,20 @@ import { ListRecipesComponent } from './list-recipes/list-recipes.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    ListRecipesComponent
+    ListRecipesComponent,
+    EditRecipeComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    // TODO : extract this to app-routing.module.ts
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'recipes', component: ListRecipesComponent },
+      { path: 'recipe/:id', component: EditRecipeComponent },
     ])
   ],
   providers: [],

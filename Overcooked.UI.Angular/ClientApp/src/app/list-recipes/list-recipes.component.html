@@ -13,6 +13,7 @@
       <th>Cooking time</th>
       <th>Dish type</th>
       <th>difficulty</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -25,6 +26,9 @@
       <td>{{ recipe.cookingTime }}</td>
       <td>{{ recipe.dishType }}</td>
       <td>{{ recipe.difficulty }}</td>
+      <td>
+        <button routerLink="/recipe/{{recipe.id}}">Edit</button>
+      </td>
     </tr>
   </tbody>
 </table>

@@ -17,6 +17,10 @@ export class RecipeService {
    * GET recipes from the server.
    */
   getRecipes(): Observable<Recipe[]> {
-    return this.http.get<Recipe[]>("api/v1/recipe");
+    return this.http.get<Recipe[]>('api/v1/recipe');
+  }
+
+  getRecipe(id: number): Observable<Recipe> {
+    return this.http.get<Recipe>(`api/v1/recipe/${id}`);
   }
 }
