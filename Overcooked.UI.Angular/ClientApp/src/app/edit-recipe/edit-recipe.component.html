@@ -1,1 +1,58 @@
-<h3>{{ recipe.title }}</h3>
+<h3>Edit a recipe</h3>
+<p *ngIf="!recipeForm">Loading</p>
+<form *ngIf="recipeForm" [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+  <!-- Title -->
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input formControlName="title" class="form-control" id="title" aria-describedby="titleHelp" placeholder="Enter title">
+    <small id="titleHelp" class="form-text text-muted">Recipe title.</small>
+  </div>
+
+  <!-- Rating -->
+  <div class="form-group">
+    <label for="rating">Rating</label>
+    <input formControlName="rating" type="number" class="form-control" id="rating">
+  </div>
+
+  <!-- Price -->
+  <div class="form-group">
+    <label for="price">Price</label>
+    <input formControlName="price" type="number" class="form-control" id="price">
+  </div>
+
+  <!-- Number of people -->
+  <div class="form-group">
+    <label for="numberOfPeople">Number of people</label>
+    <input formControlName="numberOfPeople" type="number" class="form-control" id="numberOfPeople">
+  </div>
+
+  <!-- Preparation time -->
+  <div class="form-group">
+    <label for="preparationTime">Preparation time</label>
+    <input formControlName="preparationTime" type="number" class="form-control" id="preparationTime">
+  </div>
+
+  <!-- Cooking time -->
+  <div class="form-group">
+    <label for="cookingTime">Cooking time</label>
+    <input formControlName="cookingTime" type="number" class="form-control" id="cookingTime">
+  </div>
+
+  <!-- Dish type -->
+  <div class="form-group">
+    <label for="dishType">Dish type</label>
+    <input formControlName="dishType" type="number" class="form-control" id="dishType">
+  </div>
+
+  <!-- difficulty -->
+  <div class="form-group">
+    <label for="difficulty">Difficulty</label>
+    <input formControlName="difficulty" type="number" class="form-control" id="difficulty">
+  </div>
+
+  <!-- Button Submit / reset -->
+  <div>
+    <button type="submit" class="btn btn-primary mr-1">Submit</button>
+    <button type="reset" class="btn btn-light">Reset</button>
+  </div>
+</form>

@@ -13,7 +13,7 @@ namespace Overcooked.API.Controllers
     {
         readonly RecipeRepository recipeRepository = new RecipeRepository();
 
-        // GET: Recipe
+        // GET: /api/v1/recipe
         [HttpGet]
         [Route("api/v1/recipe")]
         public IEnumerable<Recipe> Index()
@@ -21,7 +21,7 @@ namespace Overcooked.API.Controllers
             return recipeRepository.GetRecipes();
         }
 
-        // GET: Recipe/5
+        // GET: /api/v1/recipe/5
         [HttpGet]
         [Route("api/v1/recipe/{id}")]
         public Recipe Details(int id)
@@ -29,7 +29,7 @@ namespace Overcooked.API.Controllers
             return recipeRepository.GetRecipe(id);
         }
 
-        // POST: Recipe
+        // POST: /api/v1/recipe
         [HttpPost]
         [Route("api/v1/recipe")]
         public int Create(Recipe recipe)
@@ -37,15 +37,15 @@ namespace Overcooked.API.Controllers
             return recipeRepository.AddRecipe(recipe);
         }
 
-        // PUT: Recipe/5
+        // PUT: /api/v1/recipe
         [HttpPut]
         [Route("api/v1/recipe")]
-        public int Edit(Recipe recipe)
+        public int Edit([FromBody]Recipe recipe)
         {
             return recipeRepository.UpdateRecipe(recipe);
         }
 
-        // DELETE: Recipe/5
+        // DELETE: /api/v1/recipe/5
         [HttpDelete]
         [Route("api/v1/recipe/{id}")]
         public int Delete(int id)
